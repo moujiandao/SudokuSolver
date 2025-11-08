@@ -12,19 +12,23 @@ The program outputs the solved Sudoku grid or displays an error message if no so
 
 ## Input Format (EBNF)
 The program expects the following format for the input:
-<input> ::= <puzzle> <eof>
-<puzzle> ::= 81*<value> "\n"
-<value> ::= "." | "1" | ... | "9"
+```ebnf
+ ::=  
+ ::= 81* "\n"
+ ::= "." | "1" | ... | "9"
+```
 
 ## Output Format (EBNF)
 The program expects the following format for the input:
-<output> ::= <result> <eof>
-<result> ::= <error> | <nosolution> | <puzzle> <puzzle>*
-<error> ::= "ERROR: expected " <expected> " saw " <saw> "\n"
-<expected> ::= "<value>" | "\\n" | "<eof>"
-<saw> ::= "<eof>" | "\\n" | <printable> | "\\x" 2*<hex-digit>
-<printable> ::= (* all characters c where isprint(c) is true *)
-<hex-digit> ::= '0' | '1' | ... | 'a' | 'b' | 'c' | 'd' | 'e' | 'f'
-<nosolution> ::= "No solutions.\n"
-<puzzle> ::= 81*<value> "\n"
-<value> ::= "." | "1" | ... | "9"
+```ebnf
+ ::=  
+ ::=  |  |  *
+ ::= "ERROR: expected "  " saw "  "\n"
+ ::= "" | "\\n" | ""
+ ::= "" | "\\n" |  | "\\x" 2*
+ ::= (* all characters c where isprint(c) is true *)
+ ::= '0' | '1' | ... | 'a' | 'b' | 'c' | 'd' | 'e' | 'f'
+ ::= "No solutions.\n"
+ ::= 81* "\n"
+ ::= "." | "1" | ... | "9"
+```
